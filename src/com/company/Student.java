@@ -1,21 +1,21 @@
 package com.company;
 
-public class Student<T extends Number> implements Learner {
-    private T age;
-    private T yearOfStudy;
+public class Student<T extends Number> implements Learnable {
+    private T learnByAge;
+    private T learn;
 
-    public Student(T age, T yearOfStudy) {
-        this.age = age;
-        this.yearOfStudy = yearOfStudy;
+    public Student(T learnByAge, T learn) {
+        this.learnByAge = learnByAge();
+        this.learn = learn();
+    }
+
+    public T learnByAge() {
+        return learnByAge;
     }
 
     @Override
-    public T getAge() {
-        return age;
-    }
-
-    @Override
-    public T getYearOfStudy() {
-        return yearOfStudy;
+    public T learn() {
+        return learn;
     }
 }
+
